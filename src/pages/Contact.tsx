@@ -7,7 +7,7 @@ import SideLinks from "../components/SideLinks";
 
 const Contact = () => {
   return (
-    <div className="min-h-screen w-screen flex flex-col justify-around items-center gap-8 relative p-16 overflow-x-hidden">
+    <div className="min-h-screen w-screen flex flex-col justify-around items-center gap-8 relative px-16 overflow-x-hidden py-8">
       <Navbar />
       <MobileNav />
       <div className="flex w-full h-full justify-center items-center gap-6 mt-6 flex-col md:flex-row">

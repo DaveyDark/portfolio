@@ -123,3 +123,51 @@ export const mobileNavAnimation = {
     scaleX: 0,
   },
 };
+
+export const cardAnimation = {
+  variants: {
+    hidden: {
+      opacity: 0,
+      scale: 0.8,
+    },
+    visible: {
+      opacity: 1,
+      scale: 1,
+    },
+    hover: {
+      scale: 1.025,
+      transition: {
+        duration: 0.2,
+      },
+    },
+  },
+  initial: "hidden",
+  viewport: {
+    once: true,
+  },
+  whileInView: "visible",
+  whileHover: "hover",
+  transition: {
+    duration: 0.5,
+    ease: "easeInOut",
+  },
+};
+
+export const projectDetailsAnimation = {
+  variants: {
+    hidden: {
+      opacity: 0,
+      scale: 0.2,
+    },
+    visible: {
+      opacity: 1,
+      scale: 1,
+    },
+  },
+  initial: "hidden",
+  animate: "visible",
+  transition: {
+    duration: 0.2,
+    ease: "easeInOut",
+  },
+};

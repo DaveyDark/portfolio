@@ -4,7 +4,7 @@ import pageTransition from "../components/pageTransition";
 
 const Blog = () => {
   return (
-    <div className="min-h-screen w-screen flex flex-col justify-around items-center gap-8 relative p-16">
+    <div className="min-h-screen w-screen flex flex-col justify-around items-center gap-8 relative px-16 py-8">
       <Navbar />
       <MobileNav />
       Blog

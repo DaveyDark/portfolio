@@ -7,9 +7,11 @@ const transitionVariants = {
   },
   hiddenBottom: {
     y: "100%",
+    opacity: 0,
   },
   visible: {
     y: "0%",
+    opacity: 1,
   },
 };
 
@@ -37,6 +39,9 @@ const pageTransition = (OgComponent: React.FC) => {
         transition={{
           duration: 1,
           ease: [0.22, 1, 0.36, 1],
+          opacity: {
+            delay: 1,
+          },
         }}
       />
     </>

@@ -1,0 +1,108 @@
+[
+  {
+    "title": "MemChess",
+    "subtitle": "Memory + Chess",
+    "date": "Feb 2024 - June 2024",
+    "banner": "/projects/memchess/banner.png",
+    "tags": ["React", "TypeScript", "SocketIO", "Rust", "Axum"],
+    "images": [
+      "/projects/memchess/0.png",
+      "/projects/memchess/1.png",
+      "/projects/memchess/2.png",
+      "/projects/memchess/3.png",
+      "/projects/memchess/4.png",
+      "/projects/memchess/5.png",
+      "/projects/memchess/6.png"
+    ],
+    "logo": "/projects/memchess/logo.png",
+    "repo": "https://www.github.com/daveydark/memchess",
+    "website": "https://memchess.online",
+    "description": "Memchess is a 2 player online game that combines memory and chess. It consists of a memory board and a chess board, both played simultaneously. The memory tiles represent pieces on the chess board and have a direct link to them. Matching a pair will delete the corresponding piece from the chess board and capturing a piece will remove it's tiles from the memory board.This unique combination allows for new strategies and plays that are not possible in traditional chess. \n\n This project is  separed into a client and server. The client is made in TypeScript and React, using libraries like Tailwind CSS and Daisy UI for styling and chess.js and SocketIO for fucntionality. The server is a Rust Axum server, deployed via Shuttle that control the SocketIO server and server-side valdation for the game. The UI is fully responsive and also features a dark mode."
+  },
+  {
+    "title": "Ranker",
+    "subtitle": "Ranking System",
+    "date": "Mar 2024 - Jun 2024",
+    "banner": "/projects/ranker/banner.png",
+    "tags": ["NextJS", "TypeScript", "DrizzleORM", "PostgreSQL"],
+    "images": [
+      "/projects/ranker/0.png",
+      "/projects/ranker/1.png",
+      "/projects/ranker/2.png",
+      "/projects/ranker/3.png",
+      "/projects/ranker/4.png",
+      "/projects/ranker/5.png",
+      "/projects/ranker/6.png"
+    ],
+    "logo": "/projects/ranker/logo.png",
+    "repo": "https://www.github.com/daveydark/ranker",
+    "website": "https://www.ranker.fun",
+    "description": "An anonymous and social platform to share opinionated rankings of customizable questions and choices .\n\nRanker is a online platform to post questions in the form of polls and users can anonymously rank those options and give their opinion. The average opinion is compiled and presented to the user. The user can also see the rankings of other users and compare them to their own.\n\nThe website is made using NextJS and TypeScript for the frontend and DrizzleORM and PostgreSQL for the backend. The website is hosted on Vercel and uses a PostgreSQL database to store user data and poll data. The website has a clean and modern design that is easy to use and navigate. It is also full responsive and features an execellent interface on mobile with animations and gestures."
+  },
+  {
+    "title": "uType",
+    "subtitle": "Typing Test Website",
+    "date": "Sept 2023 - Oct 2023",
+    "banner": "/projects/utype/banner.png",
+    "tags": ["Flask", "Python", "SQLite", "HTML/CSS/JS"],
+    "images": [
+      "/projects/utype/0.jpeg",
+      "/projects/utype/1.jpeg",
+      "/projects/utype/2.jpeg",
+      "/projects/utype/3.jpeg",
+      "/projects/utype/4.jpeg"
+    ],
+    "logo": "/projects/utype/logo.png",
+    "repo": "https://www.github.com/daveydark/utype",
+    "website": "https://utype.onrender.com",
+    "description": "uType is a typing practice and testing platform that offers features like customizable tests, stat tracking and leaderboards. It also uses a score system to rank users and tests. The score of a test is calculated using a formula that involves numerous parameters like CPM, WPM, Average word length, time taken etc. It is intended to give a fair assesment of a user's performance independant of the options they chose for the test.\n\nThe website is made using Flask and SQLite for the backend and HTML/CSS/JS for the frontend. The website is hosted on Render and uses a sqliite database to store user data and test data. The website has a simple and clean design that is easy to use and navigate."
+  },
+  {
+    "title": "React Mineweeper",
+    "subtitle": "Minesweeper Clone",
+    "date": "Oct 2023",
+    "banner": "/projects/react-minesweeper/0.jpeg",
+    "tags": ["React", "TypeScript", "HTML/CSS"],
+    "images": [
+      "/projects/react-minesweeper/1.jpeg",
+      "/projects/react-minesweeper/2.jpeg",
+      "/projects/react-minesweeper/3.jpeg",
+      "/projects/react-minesweeper/4.jpeg"
+    ],
+    "logo": "/projects/react-minesweeper/logo.png",
+    "repo": "https://www.github.com/daveydark/react-minesweeper",
+    "website": "https://react-minesweeper-dd.vercel.app",
+    "description": "This is a Minesweeper clone I made as my first project when I was learning React. It features the standard minesweeper gameplay with some nice animations and also some customizability like board size and mine count. The game has a clean and modern design that is easy to use and navigate. It is also fully responsive.\n\nThe website is made using React and TypeScript for the frontend and CSS for the styling. The website is hosted on Vercel.The website has a simple and clean design that is easy to use and navigate."
+  },
+  {
+    "title": "CLI Chess",
+    "subtitle": "Chess Clone with custom engine",
+    "date": "Oct 2023 - Nov 2024",
+    "banner": "/projects/cli-chess/banner.png",
+    "tags": ["C++"],
+    "images": [
+      "/projects/cli-chess/0.png",
+      "/projects/cli-chess/1.png",
+      "/projects/cli-chess/2.png"
+    ],
+    "logo": "/projects/cli-chess/logo.png",
+    "repo": "https://www.github.com/daveydark/cli-chess",
+    "description": "A Chess clone in C++ I made to practice OOPS. It has a Object Oriented design with classes for pieces, board, game etc. The game is made using C++ and the standard library and uses ASCII escape codes for displaying the board. The game has a simple interface that is easy to use and takes input from the user in form of moves written in algebric and chess notation. I also created the chess engine from scratch that is able to process and validate all chess moves and handle the board logic."
+  },
+  {
+    "title": "Slime Invasion",
+    "subtitle": "2D Tower Defence Game",
+    "date": "Apr 2021",
+    "banner": "/projects/slime-invasion/0.png",
+    "tags": ["Python", "Pygame"],
+    "images": [
+      "/projects/slime-invasion/1.png",
+      "/projects/slime-invasion/2.png",
+      "/projects/slime-invasion/3.png"
+    ],
+    "logo": "/projects/slime-invasion/logo.png",
+    "repo": "https://github.com/DaveyDark/Slime-Invasion",
+    "website": "https://daveydark.itch.io/slime-invasion",
+    "description": "A 2D tower defence game I made using Python and Pygame. It was a collaborative project for a 2-day game jam with an online friend of mine. The game features a wave based system where the player has to defend their base from incoming slimes. The player can place towers on the map to attack the slimes and earn money to buy more towers. The game has simple controls and allows the user to directly take control of the placed towers for more interactivity. It also features a high score system and a shop to buy towers. The game is available for download on itch.io. I also did the art and sound design for this game, all assets used are made by us."
+  }
+]
