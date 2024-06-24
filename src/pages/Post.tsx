@@ -23,10 +23,10 @@ const Post = ({ title, date, file, banner, subtitle, tags }: PostProps) => {
   }, []);
 
   return (
-    <div className="min-h-screen w-screen flex flex-col justify-around items-center gap-8 relative py-24 px-8 overflow-x-hidden">
+    <div className="min-h-screen w-screen flex flex-col justify-around items-center gap-8 relative py-24 md:px-8 px-4 overflow-x-hidden">
       <Navbar />
       <MobileNav />
-      <div className="bg-gray-800 flex flex-col justify-center gap-4 max-w-4xl pt-4 p-12 rounded-lg">
+      <div className="bg-gray-800 flex flex-col justify-center gap-4 max-w-4xl pt-4 md:p-12 p-4 rounded-lg">
         <span className="flex flex-col w-full justify-between my-4">
           <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold font-mono">
             {title}
@@ -34,7 +34,10 @@ const Post = ({ title, date, file, banner, subtitle, tags }: PostProps) => {
           <p className="font-mono text-gray-400">{date}</p>
           <div className="flex gap-2 flex-wrap my-2">
             {tags.map((tag) => (
-              <span className="bg-gray-700 rounded-full px-2 py-0.5 text-sm">
+              <span
+                className="bg-gray-700 rounded-full px-2 py-0.5 text-sm"
+                key={tag}
+              >
                 {tag}
               </span>
             ))}
@@ -42,9 +45,9 @@ const Post = ({ title, date, file, banner, subtitle, tags }: PostProps) => {
         </span>
         <img src={banner} className="max-h-72 object-contain mb-4" />
         <p className="text-lg text-gray-400 mb-4">{subtitle}</p>
-        <p className="prose prose-invert md:prose-lg lg:prose-xl prose-neutral prose-img:max-h-72 prose-img:mx-auto">
+        <span className="prose prose-sm sm:prose-md md:prose-lg lg:prose-xl prose-invert prose-img:max-h-72 prose-img:mx-auto">
           {markdown}
-        </p>
+        </span>
       </div>
     </div>
   );

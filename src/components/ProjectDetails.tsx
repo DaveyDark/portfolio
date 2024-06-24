@@ -87,7 +87,10 @@ const ProjectDetails = ({
           </div>
           <div className="flex gap-2 flex-wrap">
             {tags.map((tag) => (
-              <span className="bg-gray-700 rounded-full px-2 py-0.5 text-sm">
+              <span
+                className="bg-gray-700 rounded-full px-2 py-0.5 text-sm"
+                key={tag}
+              >
                 {tag}
               </span>
             ))}

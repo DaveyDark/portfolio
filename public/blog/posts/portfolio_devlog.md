@@ -29,11 +29,6 @@ as creating pages by hand for each project and post would also take a lot of tim
 
 After giving it some thought, I then considered creating the dynamic material, such as projects and posts,
 using a content management system (CMS) or static site generator. As I had no prior experience with either of these,
-I had to spend some time researching before deciding on Gatsby and Astro.
-I chose them because, in the first place, they were compatible with React,
-and I had already used React to build half of my website and didn't want to waste any more time rewriting it.
-Secondly, according on my additional research, they were well-liked candidates for SSG,
-with Gatsby representing an established, older framework and Astro being the newcomer.
 
 However, after reading both of their documents, I realized there were even more issues.
 First of all, moving my existing code to them wouldn't be easy, and secondly, since they render static html/css/js rather than react,
@@ -46,7 +41,7 @@ I was just wasting more time.
 
 ## The simpler solution
 
-![JSON Object holding project data](/blog/media/gatsby_astro.png)
+![JSON Object holding project data](/blog/media/json_solution.png)
 
 Eventually it dawned on me that, since the data isn't very big or dynamic, why not just store it all in a public JSON object?
 That way, I could add to it with relative ease and it wouldn't need to be updated too frequently to interfere with
