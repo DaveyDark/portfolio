@@ -13,7 +13,7 @@ const Projects = () => {
       <h1 className="text-4xl text-yellow-400 uppercase font-semibold">
         Projects
       </h1>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 place-items-center gap-4">
+      <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 place-items-center gap-4">
         {projects.map((project) => (
           <Card
             title={project.title}

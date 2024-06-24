@@ -21,7 +21,7 @@
   },
   {
     "title": "Ranker",
-    "subtitle": "Ranking System",
+    "subtitle": "Ranking Website",
     "date": "Mar 2024 - Jun 2024",
     "banner": "/projects/ranker/banner.png",
     "tags": ["NextJS", "TypeScript", "DrizzleORM", "PostgreSQL"],
@@ -41,7 +41,7 @@
   },
   {
     "title": "uType",
-    "subtitle": "Typing Test Website",
+    "subtitle": "Typing Test",
     "date": "Sept 2023 - Oct 2023",
     "banner": "/projects/utype/banner.png",
     "tags": ["Flask", "Python", "SQLite", "HTML/CSS/JS"],
@@ -76,7 +76,7 @@
   },
   {
     "title": "CLI Chess",
-    "subtitle": "Chess Clone with custom engine",
+    "subtitle": "Chess Clone",
     "date": "Oct 2023 - Nov 2024",
     "banner": "/projects/cli-chess/banner.png",
     "tags": ["C++"],
@@ -91,7 +91,7 @@
   },
   {
     "title": "Slime Invasion",
-    "subtitle": "2D Tower Defence Game",
+    "subtitle": "2D Tower Defense",
     "date": "Apr 2021",
     "banner": "/projects/slime-invasion/0.png",
     "tags": ["Python", "Pygame"],

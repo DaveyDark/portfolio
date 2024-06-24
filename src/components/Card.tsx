@@ -2,40 +2,60 @@ import { motion } from "framer-motion";
 import { cardAnimation } from "../constants";
 import { useState } from "react";
 import { X } from "react-feather";
+import { Link } from "react-router-dom";
 
 interface CardProps {
   title: string;
   subtitle: string;
   img: string;
+  href?: string;
   expandable?: boolean;
   expandedComponent?: React.ReactNode;
+  orientation?: "v" | "h";
 }
 
-const Card = ({
+const Card = (props: CardProps) => {
+  const { expandable } = props;
+  if (expandable) {
+    return <CardContent {...props} />;
+  } else {
+    return (
+      <Link to={props.href!}>
+        <CardContent {...props} />
+      </Link>
+    );
+  }
+};
+
+export const CardContent = ({
   title,
   img,
   subtitle,
   expandable,
+  orientation = "v",
   expandedComponent,
 }: CardProps) => {
   const [isOpen, setIsOpen] = useState(false);
-
   return (
     <>
       <motion.div
-        className="bg-gray-800 border border-gray-700 rounded-2xl p-6 max-w-sm flex flex-col gap-6 cursor-pointer"
+        className={`bg-gray-800 border border-gray-700 rounded-2xl p-4 md:p-6 flex md:gap-6 
+                      cursor-pointer ${orientation === "v" ? "flex-col max-w-sm" : "max-w-2xl items-center"}`}
         {...cardAnimation}
         onClick={() => setIsOpen(true)}
       >
         <motion.img
           src={img}
           alt={title}
-          className="aspect-square object-cover rounded-md"
-          layoutId={`${title}-img`}
+          className={`aspect-square object-cover rounded-md h-full ${orientation === "v" ? "mb-4 w-full" : "mr-4 w-1/4"}`}
         />
-        <span className="text-center">
-          <h1 className="text-xl md:text-2xl font-mono">{title}</h1>
-          <span className="text-gray-400 font-mono">{subtitle}</span>
+        <span className={`${orientation == "h" ? "w-3/4" : "test-center"}`}>
+          <h1 className="sm:text-xl md:text-2xl font-mono text-sm mb-2 line-clamp-2">
+            {title}
+          </h1>
+          <span className="text-gray-400 sm:text-lg text-sm md:line-clamp-3 lg:line-clamp-3 line-clamp-2">
+            {subtitle}
+          </span>
         </span>
       </motion.div>
       {isOpen && expandable && (

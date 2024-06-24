@@ -15,10 +15,10 @@ const transitionVariants = {
   },
 };
 
-const pageTransition = (OgComponent: React.FC) => {
-  return () => (
+const pageTransition = <P extends object>(OgComponent: React.FC<P>) => {
+  return (props: P) => (
     <>
-      <OgComponent />
+      <OgComponent {...props} />
       <motion.div
         className="fixed top-0 left-0 w-[100%] h-[100%] bg-[url('./assets/transition.svg')] z-50 origin-center"
         variants={transitionVariants}

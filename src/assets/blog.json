@@ -1,0 +1,11 @@
+[
+  {
+    "title": "Portfolio Devlog: Simplicity",
+    "subtitle": "My first blog post covering the development process of this portfolio and the main challenge I faced during this time and how I got through it.",
+    "file": "/blog/posts/portfolio_devlog.md",
+    "date": "2024-06-23",
+    "tags": ["React", "Framer Motion"],
+    "slug": "portfolio-devlog",
+    "banner": "/blog/media/portfolio_thumbnail.png"
+  }
+]

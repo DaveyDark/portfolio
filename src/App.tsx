@@ -6,6 +6,8 @@ import About from "./pages/About";
 import Contact from "./pages/Contact";
 import Blog from "./pages/Blog";
 import Projects from "./pages/Projects";
+import blog from "./assets/blog.json";
+import Post from "./pages/Post";
 
 function App() {
   const location = useLocation();
@@ -18,6 +20,13 @@ function App() {
           <Route path="/projects" element={<Projects />} />
           <Route path="/blog" element={<Blog />} />
           <Route path="/contact" element={<Contact />} />
+          {blog.map((post) => (
+            <Route
+              key={post.slug}
+              path={`/blog/${post.slug}`}
+              element={<Post {...post} />}
+            />
+          ))}
         </Routes>
       </AnimatePresence>
     </main>
