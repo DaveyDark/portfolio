@@ -1,5 +1,27 @@
 [
   {
+    "title": "SplitIt",
+    "subtitle": "Group Expense Splitting",
+    "date": "Jul 2024 - Sep 2024",
+    "banner": "/projects/splitit/banner.png",
+    "tags": ["Flutter", "Dart", "Isar"],
+    "logo": "/projects/splitit/logo.png",
+    "repo": "https://www.github.com/daveydark/split-it",
+    "description": "Split It is a Flutter-based budget-splitting app built to simplify managing shared expenses within a group. It allows users to create \"splits\" for various group activities, add contributors, and record transactions to track who paid, how much, and for what purpose. The app also offers a smart settlement feature, which calculates and displays the exact transactions needed to equalize the group’s expenses, making it easy to settle bills.\n\nOn the technical side, Split It is a Flutter app that uses the Isar database for offline-first data management, ensuring that users can create and manage splits without the need for an internet connection. The database structure efficiently stores splits, contributors, and transaction data in a way that is easy to retrieve and update. No authentication or account setup is required, making it privacy-focused and simple to use.",
+    "images": [
+      "/projects/splitit/ss9.png",
+      "/projects/splitit/ss10.png",
+      "/projects/splitit/ss1.png",
+      "/projects/splitit/ss2.png",
+      "/projects/splitit/ss3.png",
+      "/projects/splitit/ss4.png",
+      "/projects/splitit/ss5.png",
+      "/projects/splitit/ss6.png",
+      "/projects/splitit/ss7.png",
+      "/projects/splitit/ss8.png"
+    ]
+  },
+  {
     "title": "MemChess",
     "subtitle": "Memory + Chess",
     "date": "Feb 2024 - June 2024",
