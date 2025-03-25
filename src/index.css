@@ -57,3 +57,72 @@ input:focus,
 textarea:focus {
   outline: none;
 }
+
+/* Markdown Editor Styles */
+.prose-editor .EasyMDEContainer {
+  width: 100%;
+}
+
+.prose-editor .CodeMirror {
+  background-color: #2d3748;
+  color: #f7fafc;
+  border-radius: 0.25rem;
+  height: 400px;
+}
+
+.prose-editor .editor-toolbar {
+  background-color: #4a5568;
+  border-radius: 0.25rem 0.25rem 0 0;
+  color: #f7fafc;
+  border: none;
+}
+
+.prose-editor .editor-toolbar button {
+  color: #f7fafc !important;
+}
+
+.prose-editor .editor-toolbar button:hover,
+.prose-editor .editor-toolbar button.active {
+  background-color: #2d3748;
+}
+
+.prose-editor .editor-preview {
+  background-color: #2d3748;
+  color: #f7fafc;
+}
+
+.prose-editor .editor-preview-side {
+  background-color: #2d3748;
+  color: #f7fafc;
+}
+
+.prose-editor .CodeMirror-cursor {
+  border-left: 1px solid #f7fafc;
+}
+
+.prose-editor .editor-toolbar.fullscreen,
+.prose-editor .CodeMirror-fullscreen {
+  background-color: #2d3748;
+}
+
+.prose-editor .editor-toolbar.fullscreen button,
+.prose-editor .editor-toolbar.fullscreen i.separator {
+  color: #f7fafc !important;
+}
+
+.prose-editor .CodeMirror-vscrollbar::-webkit-scrollbar {
+  width: 8px;
+}
+
+.prose-editor .CodeMirror-vscrollbar::-webkit-scrollbar-track {
+  background: #4a5568;
+}
+
+.prose-editor .CodeMirror-vscrollbar::-webkit-scrollbar-thumb {
+  background-color: #718096;
+  border-radius: 6px;
+}
+
+.prose-editor .CodeMirror-vscrollbar::-webkit-scrollbar-thumb:hover {
+  background-color: #a0aec0;
+}

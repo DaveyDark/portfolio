@@ -6,8 +6,11 @@ import About from "./pages/About";
 import Contact from "./pages/Contact";
 import Blog from "./pages/Blog";
 import Projects from "./pages/Projects";
-import blog from "./assets/blog.json";
 import Post from "./pages/Post";
+import AdminLogin from "./pages/AdminLogin";
+import AdminDashboard from "./pages/AdminDashboard";
+import NewBlogPost from "./pages/NewBlogPost";
+import EditBlogPost from "./pages/EditBlogPost";
 
 function App() {
   const location = useLocation();
@@ -19,14 +22,14 @@ function App() {
           <Route path="/about" element={<About />} />
           <Route path="/projects" element={<Projects />} />
           <Route path="/blog" element={<Blog />} />
+          <Route path="/blog/:slug" element={<Post />} />
           <Route path="/contact" element={<Contact />} />
-          {blog.map((post) => (
-            <Route
-              key={post.slug}
-              path={`/blog/${post.slug}`}
-              element={<Post {...post} />}
-            />
-          ))}
+          
+          {/* Admin Routes */}
+          <Route path="/admin/login" element={<AdminLogin />} />
+          <Route path="/admin/dashboard" element={<AdminDashboard />} />
+          <Route path="/admin/blog/new" element={<NewBlogPost />} />
+          <Route path="/admin/blog/edit/:id" element={<EditBlogPost />} />
         </Routes>
       </AnimatePresence>
     </main>

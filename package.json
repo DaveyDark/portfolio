@@ -11,13 +11,17 @@
   },
   "dependencies": {
     "@emailjs/browser": "^4.3.3",
+    "@supabase/supabase-js": "^2.49.3",
     "@types/node": "^20.14.6",
+    "easymde": "^2.20.0",
     "framer-motion": "^11.2.11",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-feather": "^2.0.10",
+    "react-markdown": "^10.1.0",
     "react-remark": "^2.1.0",
     "react-router-dom": "^6.23.1",
+    "react-simplemde-editor": "^5.2.0",
     "typed.js": "^2.1.0"
   },
   "devDependencies": {
