@@ -11,6 +11,9 @@ import AdminLogin from "./pages/AdminLogin";
 import AdminDashboard from "./pages/AdminDashboard";
 import NewBlogPost from "./pages/NewBlogPost";
 import EditBlogPost from "./pages/EditBlogPost";
+import NewBlogGroup from "./pages/NewBlogGroup";
+import EditBlogGroup from "./pages/EditBlogGroup";
+import BlogGroup from "./pages/BlogGroup";
 
 function App() {
   const location = useLocation();
@@ -22,6 +25,7 @@ function App() {
           <Route path="/about" element={<About />} />
           <Route path="/projects" element={<Projects />} />
           <Route path="/blog" element={<Blog />} />
+          <Route path="/blog/group/:slug" element={<BlogGroup />} />
           <Route path="/blog/:slug" element={<Post />} />
           <Route path="/contact" element={<Contact />} />
           
@@ -30,6 +34,8 @@ function App() {
           <Route path="/admin/dashboard" element={<AdminDashboard />} />
           <Route path="/admin/blog/new" element={<NewBlogPost />} />
           <Route path="/admin/blog/edit/:id" element={<EditBlogPost />} />
+          <Route path="/admin/group/new" element={<NewBlogGroup />} />
+          <Route path="/admin/group/edit/:id" element={<EditBlogGroup />} />
         </Routes>
       </AnimatePresence>
     </main>

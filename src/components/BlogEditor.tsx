@@ -1,8 +1,8 @@
-import { useState, useMemo, useCallback, useRef } from "react";
+import { useState, useMemo, useCallback, useRef, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import SimpleMDE from "react-simplemde-editor";
 import "easymde/dist/easymde.min.css";
-import { supabase } from "../lib/supabaseClient";
+import { supabase, fetchBlogGroups, BlogGroup } from "../lib/supabaseClient";
 import { Upload, X } from "react-feather";
 
 interface BlogEditorProps {
@@ -14,6 +14,7 @@ interface BlogEditorProps {
     tags: string[];
     slug: string;
     banner_url: string;
+    group_id: number | null;
   };
   isEdit?: boolean;
 }
@@ -26,6 +27,8 @@ const BlogEditor = ({ initialData, isEdit = false }: BlogEditorProps) => {
   const [slug, setSlug] = useState(initialData?.slug || "");
   const [bannerUrl, setBannerUrl] = useState(initialData?.banner_url || "");
   const [bannerFile, setBannerFile] = useState<File | null>(null);
+  const [groupId, setGroupId] = useState<number | null>(initialData?.group_id || null);
+  const [groups, setGroups] = useState<BlogGroup[]>([]);
   const [uploading, setUploading] = useState(false);
   const [saving, setSaving] = useState(false);
   const [error, setError] = useState("");
@@ -34,6 +37,16 @@ const BlogEditor = ({ initialData, isEdit = false }: BlogEditorProps) => {
 
   // Create a ref for the hidden file input
   const imageInputRef = useRef<HTMLInputElement>(null);
+
+  // Load blog groups
+  useEffect(() => {
+    const loadGroups = async () => {
+      const blogGroups = await fetchBlogGroups();
+      setGroups(blogGroups);
+    };
+    
+    loadGroups();
+  }, []);
 
   // Memoize the handleChange function
   const handleContentChange = useCallback((value: string) => {
@@ -66,7 +79,7 @@ const BlogEditor = ({ initialData, isEdit = false }: BlogEditorProps) => {
 
       // Upload the file to Supabase Storage
       const { data, error } = await supabase.storage
-        .from("portfolio-images")
+        .from("blog-images")
         .upload(fileName, bannerFile);
 
       if (error) throw error;
@@ -75,7 +88,7 @@ const BlogEditor = ({ initialData, isEdit = false }: BlogEditorProps) => {
       const {
         data: { publicUrl },
       } = supabase.storage
-        .from("portfolio-images")
+        .from("blog-images")
         .getPublicUrl(data?.path || "");
 
       return publicUrl;
@@ -95,7 +108,7 @@ const BlogEditor = ({ initialData, isEdit = false }: BlogEditorProps) => {
 
       // Upload the file to Supabase Storage
       const { data, error } = await supabase.storage
-        .from("portfolio-images")
+        .from("blog-images")
         .upload(fileName, file);
 
       if (error) throw error;
@@ -104,7 +117,7 @@ const BlogEditor = ({ initialData, isEdit = false }: BlogEditorProps) => {
       const {
         data: { publicUrl },
       } = supabase.storage
-        .from("portfolio-images")
+        .from("blog-images")
         .getPublicUrl(data?.path || "");
 
       return publicUrl;
@@ -188,6 +201,7 @@ const BlogEditor = ({ initialData, isEdit = false }: BlogEditorProps) => {
         tags: tagsArray,
         slug,
         banner_url: finalBannerUrl,
+        group_id: groupId,
         created_at: new Date().toISOString(),
       };
 
@@ -333,21 +347,42 @@ const BlogEditor = ({ initialData, isEdit = false }: BlogEditorProps) => {
           />
         </div>
 
-        <div className="flex flex-col gap-2">
-          <label htmlFor="tags" className="text-yellow-400 font-semibold">
-            Tags
-            <span className="text-gray-400 text-sm ml-2">
-              (Comma separated)
-            </span>
-          </label>
-          <input
-            type="text"
-            id="tags"
-            value={tags}
-            onChange={(e) => setTags(e.target.value)}
-            className="bg-gray-700 rounded p-2 text-white"
-            placeholder="React, Framer Motion, Web Development"
-          />
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="flex flex-col gap-2">
+            <label htmlFor="tags" className="text-yellow-400 font-semibold">
+              Tags
+              <span className="text-gray-400 text-sm ml-2">
+                (Comma separated)
+              </span>
+            </label>
+            <input
+              type="text"
+              id="tags"
+              value={tags}
+              onChange={(e) => setTags(e.target.value)}
+              className="bg-gray-700 rounded p-2 text-white"
+              placeholder="React, Framer Motion, Web Development"
+            />
+          </div>
+
+          <div className="flex flex-col gap-2">
+            <label htmlFor="group" className="text-yellow-400 font-semibold">
+              Blog Group
+            </label>
+            <select
+              id="group"
+              value={groupId || ''}
+              onChange={(e) => setGroupId(e.target.value ? Number(e.target.value) : null)}
+              className="bg-gray-700 rounded p-2 text-white"
+            >
+              <option value="">No Group</option>
+              {groups.map((group) => (
+                <option key={group.id} value={group.id}>
+                  {group.name}
+                </option>
+              ))}
+            </select>
+          </div>
         </div>
 
         <div className="flex flex-col gap-2">

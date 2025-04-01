@@ -10,10 +10,19 @@ This guide explains how to set up the Supabase backend for your portfolio blog s
 
 ## 2. Set Up Database Tables
 
-Execute the following SQL in the Supabase SQL Editor to create the required table:
+Execute the following SQL in the Supabase SQL Editor to create the required tables:
 
 ```sql
--- Create blog posts table
+-- Create blog groups table
+CREATE TABLE blog_groups (
+  id BIGSERIAL PRIMARY KEY,
+  name TEXT NOT NULL,
+  description TEXT,
+  slug TEXT NOT NULL UNIQUE,
+  created_at TIMESTAMP WITH TIME ZONE DEFAULT TIMEZONE('utc', NOW())
+);
+
+-- Create blog posts table with group_id field
 CREATE TABLE blog_posts (
   id BIGSERIAL PRIMARY KEY,
   title TEXT NOT NULL,
@@ -22,11 +31,14 @@ CREATE TABLE blog_posts (
   created_at TIMESTAMP WITH TIME ZONE DEFAULT TIMEZONE('utc', NOW()),
   tags TEXT[] DEFAULT '{}',
   slug TEXT NOT NULL UNIQUE,
-  banner_url TEXT
+  banner_url TEXT,
+  group_id BIGINT REFERENCES blog_groups(id)
 );
 
--- Create index for more efficient lookups by slug
+-- Create indexes for more efficient lookups
 CREATE INDEX blog_posts_slug_idx ON blog_posts (slug);
+CREATE INDEX blog_posts_group_id_idx ON blog_posts (group_id);
+CREATE INDEX blog_groups_slug_idx ON blog_groups (slug);
 ```
 
 ## 3. Set Up Storage
