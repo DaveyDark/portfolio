@@ -79,7 +79,7 @@ const BlogEditor = ({ initialData, isEdit = false }: BlogEditorProps) => {
 
       // Upload the file to Supabase Storage
       const { data, error } = await supabase.storage
-        .from("blog-images")
+        .from("portfolio-images")
         .upload(fileName, bannerFile);
 
       if (error) throw error;
@@ -88,7 +88,7 @@ const BlogEditor = ({ initialData, isEdit = false }: BlogEditorProps) => {
       const {
         data: { publicUrl },
       } = supabase.storage
-        .from("blog-images")
+        .from("portfolio-images")
         .getPublicUrl(data?.path || "");
 
       return publicUrl;
@@ -108,7 +108,7 @@ const BlogEditor = ({ initialData, isEdit = false }: BlogEditorProps) => {
 
       // Upload the file to Supabase Storage
       const { data, error } = await supabase.storage
-        .from("blog-images")
+        .from("portfolio-images")
         .upload(fileName, file);
 
       if (error) throw error;
@@ -117,7 +117,7 @@ const BlogEditor = ({ initialData, isEdit = false }: BlogEditorProps) => {
       const {
         data: { publicUrl },
       } = supabase.storage
-        .from("blog-images")
+        .from("portfolio-images")
         .getPublicUrl(data?.path || "");
 
       return publicUrl;

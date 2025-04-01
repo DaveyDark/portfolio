@@ -44,7 +44,7 @@ CREATE INDEX blog_groups_slug_idx ON blog_groups (slug);
 ## 3. Set Up Storage
 
 1. In the Supabase dashboard, navigate to "Storage"
-2. Create a new bucket called "blog-images"
+2. Create a new bucket called "portfolio-images"
 3. Set the bucket to public or configure appropriate policies
 4. Configure CORS if necessary to allow uploads from your domain
 
@@ -71,22 +71,22 @@ CREATE POLICY "Allow delete access to blog posts"
 ON blog_posts FOR DELETE 
 USING (true);
 
--- Allow access to blog-images storage
+-- Allow access to portfolio-images storage
 CREATE POLICY "Allow public read access to blog images"
 ON storage.objects FOR SELECT
-USING (bucket_id = 'blog-images');
+USING (bucket_id = 'portfolio-images');
 
 CREATE POLICY "Allow public insert access to blog images"
 ON storage.objects FOR INSERT
-WITH CHECK (bucket_id = 'blog-images');
+WITH CHECK (bucket_id = 'portfolio-images');
 
 CREATE POLICY "Allow public update access to blog images"
 ON storage.objects FOR UPDATE
-USING (bucket_id = 'blog-images');
+USING (bucket_id = 'portfolio-images');
 
 CREATE POLICY "Allow public delete access to blog images"
 ON storage.objects FOR DELETE
-USING (bucket_id = 'blog-images');
+USING (bucket_id = 'portfolio-images');
 ```
 
 In a production environment, you might want to restrict these policies further for security purposes.

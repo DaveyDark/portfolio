@@ -72,7 +72,7 @@ const AdminDashboard = () => {
       if (post?.banner_url) {
         const path = post.banner_url.split('/').pop();
         if (path) {
-          await supabase.storage.from('blog-images').remove([path]);
+          await supabase.storage.from('portfolio-images').remove([path]);
         }
       }
 
