@@ -4,14 +4,13 @@ import Navbar from '../components/Navbar';
 import MobileNav from '../components/MobileNav';
 import pageTransition from '../components/pageTransition';
 import ProtectedRoute from '../components/ProtectedRoute';
-import { supabase, BlogGroup } from '../lib/supabaseClient';
+import { supabase } from '../lib/supabaseClient';
 
 const EditBlogGroup = () => {
   const { id } = useParams<{ id: string }>();
   const [name, setName] = useState('');
   const [description, setDescription] = useState('');
   const [slug, setSlug] = useState('');
-  const [originalSlug, setOriginalSlug] = useState('');
   const [loading, setLoading] = useState(true);
   const [saving, setSaving] = useState(false);
   const [error, setError] = useState('');
@@ -45,7 +44,6 @@ const EditBlogGroup = () => {
       setName(data.name);
       setDescription(data.description || '');
       setSlug(data.slug);
-      setOriginalSlug(data.slug);
     } catch (error: any) {
       console.error('Error fetching blog group:', error);
       setError(error.message || 'Failed to fetch blog group');
