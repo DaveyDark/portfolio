@@ -1,5 +1,28 @@
 [
   {
+    "title": "SkillStack AI",
+    "subtitle": "AI-Driven Learning Revolution",
+    "date": "Jan 2025 - Ongoing",
+    "banner": "/projects/skillstack/banner.png",
+    "tags": ["NextJS", "MongoDB", "Prisma", "TypeScript", "Langchain"],
+    "logo": "/projects/skillstack/logo.png",
+    "repo": "https://github.com/SkillStackAI/skillstack-ai",
+    "website": "https://skillstack-ai.vercel.app",
+    "description": "SkillStack AI is an advanced AI-powered education platform designed to enhance learning by providing AI-generated study materials, quizzes, and personalized progress tracking. The platform integrates an infinite scroll quiz system, live classes, and teacher monitoring tools, ensuring an adaptive learning environment for students. \n\nSkillStack AI revolutionizes learning by leveraging AI to analyze student performance and dynamically adjust study content, promoting efficiency and personalized learning experiences. It is particularly beneficial for competitive programming and exam preparation, where real-time feedback and adaptability are crucial.",
+    "images": [
+      "/projects/splitit/ss9.png",
+      "/projects/splitit/ss10.png",
+      "/projects/splitit/ss1.png",
+      "/projects/splitit/ss2.png",
+      "/projects/splitit/ss3.png",
+      "/projects/splitit/ss4.png",
+      "/projects/splitit/ss5.png",
+      "/projects/splitit/ss6.png",
+      "/projects/splitit/ss7.png",
+      "/projects/splitit/ss8.png"
+    ]
+  },
+  {
     "title": "SplitIt",
     "subtitle": "Group Expense Splitting",
     "date": "Jul 2024 - Sep 2024",
